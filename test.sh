@@ -11,10 +11,14 @@ else
   exit 1
 fi
 
+# Print output
+echo "Output:"
+echo $output
+
 if [ "$output" == "$expected_output" ] ; then
   echo "Pass: Output is correct"
 else
-  echo "Expected '$expected_output' but got: $output"
+  echo "Expected '$expected_output' but got: '$output'"
   exit 1
 fi
 
