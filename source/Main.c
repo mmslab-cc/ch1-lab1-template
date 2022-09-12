@@ -3,7 +3,7 @@
 
 int main()
 {
-	printf("welcome to c\n");
+	// 在這裡新增你的程式碼
 	system("pause");
 	return 0;
 }
