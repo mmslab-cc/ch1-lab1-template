@@ -13,13 +13,17 @@ fi
 
 # Print output
 echo "Output:"
-diff --color=always --palette='ad=1;3;38;5;9:de=1;3;38;5;154' \
+diff  --old-line-format='⏩ %L' \
+      --new-line-format='❌ %L' \
+      --unchanged-line-format='✅ %L' \
       <(echo "$expected_output" ) <(echo "$output")
 
+# 等待一下，不然輸出比對結果會被切斷
+sleep 0.5
 if [ "$output" == "$expected_output" ] ; then
   echo "Pass: Output is correct"
 else
-  echo "Failed"
+  echo "Failed!"
   exit 1
 fi
 
