@@ -13,12 +13,13 @@ fi
 
 # Print output
 echo "Output:"
-echo $output
+diff --color=always --palette='ad=1;3;38;5;9:de=1;3;38;5;154' \
+      <(echo "$expected_output" ) <(echo "$output")
 
 if [ "$output" == "$expected_output" ] ; then
   echo "Pass: Output is correct"
 else
-  echo "Expected '$expected_output' but got: '$output'"
+  echo "Failed"
   exit 1
 fi
 
